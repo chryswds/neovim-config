@@ -1,13 +1,22 @@
 -- Colorscheme, statusline, icons, and general UI niceties.
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "aktersnurra/no-clown-fiesta.nvim",
+    name = "no-clown-fiesta",
     lazy = false,
     priority = 1000,
     config = function()
-      require("rose-pine").setup({ variant = "main" })
-      vim.cmd.colorscheme("rose-pine")
+      require("no-clown-fiesta").setup({
+        transparent = false,
+        styles = {
+          -- Keep the look mono but let key syntax stand out a touch.
+          functions = { bold = true },
+          keywords = {},
+          variables = {},
+          type = { bold = true },
+        },
+      })
+      vim.cmd.colorscheme("no-clown-fiesta")
     end,
   },
 
@@ -18,7 +27,7 @@ return {
     event = "VeryLazy",
     opts = {
       options = {
-        theme = "rose-pine",
+        theme = "auto",
         globalstatus = true,
         section_separators = "",
         component_separators = "",
